@@ -401,6 +401,66 @@
             background-repeat: no-repeat;
         }
 
+        /* ===== VÍDEOS ===== */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .video-card {
+            background: var(--branco);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(168, 195, 160, 0.1);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(47, 93, 98, 0.12);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #1a1a2e;
+        }
+
+        .video-wrapper video::-webkit-media-controls {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .video-info {
+            padding: 20px 24px 24px;
+        }
+
+        .video-info h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: var(--petroleo);
+            margin-bottom: 6px;
+        }
+
+        .video-info p {
+            color: #4a5f64;
+            font-size: 0.95rem;
+        }
+
         /* ===== DEPOIMENTOS ===== */
         .depoimentos-grid {
             display: grid;
@@ -687,6 +747,10 @@
             .hero-content h1 {
                 font-size: 2.8rem;
             }
+            .videos-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
         }
         @media (max-width: 768px) {
             nav ul {
@@ -732,6 +796,10 @@
             .logo {
                 font-size: 1.2rem;
             }
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
         }
         @media (max-width: 480px) {
             .servicos-grid {
@@ -771,6 +839,15 @@
             .logo {
                 font-size: 1rem;
             }
+            .video-info {
+                padding: 16px;
+            }
+            .video-info h3 {
+                font-size: 1rem;
+            }
+            .video-info p {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -788,6 +865,8 @@
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
                     <li><a href="#depoimentos">Depoimentos</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -967,7 +1046,7 @@
         </div>
     </section>
 
-    <!-- ===== GALERIA ===== -->
+    <!-- ===== GALERIA ANTES E DEPOIS ===== -->
     <section class="section" id="galeria" style="background: var(--cinza-claro);">
         <div class="container">
             <h2 class="section-title">Antes e <span>Depois</span></h2>
@@ -991,6 +1070,44 @@
             <p style="text-align:center; font-size:0.85rem; margin-top:20px; color:#4a5f64;">
                 <i class="fas fa-lock" style="margin-right:6px;"></i> Imagens com autorização dos pacientes.
             </p>
+        </div>
+    </section>
+
+    <!-- ===== VÍDEOS ===== -->
+    <section class="section" id="videos">
+        <div class="container">
+            <h2 class="section-title">Vídeos <span>Institucionais</span></h2>
+            <p class="section-subtitle">Conheça um pouco mais sobre nosso trabalho e veja o depoimento de quem já confiou na Levità.</p>
+            
+            <div class="videos-grid">
+                <!-- Vídeo 1 - Relato de Experiência -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="videos/video1.mp4" type="video/mp4">
+                            Seu navegador não suporta a reprodução de vídeos.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3><i class="fas fa-star" style="color: var(--dourado);"></i> Relato de Experiência</h3>
+                        <p>Depoimento de uma paciente sobre o atendimento e os resultados do tratamento.</p>
+                    </div>
+                </div>
+                
+                <!-- Vídeo 2 - Trabalhando -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="videos/video2.mp4" type="video/mp4">
+                            Seu navegador não suporta a reprodução de vídeos.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3><i class="fas fa-play-circle" style="color: var(--dourado);"></i> Nosso Trabalho</h3>
+                        <p>Veja como é realizado o atendimento com cuidado, dedicação e profissionalismo.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1141,6 +1258,8 @@
                     <h4>Links rápidos</h4>
                     <a href="#sobre">Sobre</a><br />
                     <a href="#servicos">Serviços</a><br />
+                    <a href="#galeria">Galeria</a><br />
+                    <a href="#videos">Vídeos</a><br />
                     <a href="#depoimentos">Depoimentos</a><br />
                     <a href="#faq">FAQ</a>
                 </div>
@@ -1177,49 +1296,19 @@
         const numeroWhatsApp = '5511978303833';
         const mensagemPersonalizada = 'Olá, vim pelo seu site e gostaria de agendar uma consulta com a Dra. Renata Kemp.';
 
-        // Função para abrir WhatsApp com a mensagem personalizada
         function abrirWhatsApp() {
             const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemPersonalizada)}`;
             window.open(url, '_blank');
         }
 
-        // Adicionar evento a todos os botões e ícones do WhatsApp
         document.addEventListener('DOMContentLoaded', function() {
-            // Botão do Hero
-            const heroBtn = document.getElementById('whatsapp-hero');
-            if (heroBtn) {
-                heroBtn.addEventListener('click', function(e) {
+            // Todos os botões WhatsApp
+            document.querySelectorAll('#whatsapp-hero, #whatsapp-banner, #whatsapp-contato, #whatsapp-float').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     abrirWhatsApp();
                 });
-            }
-
-            // Botão do Banner
-            const bannerBtn = document.getElementById('whatsapp-banner');
-            if (bannerBtn) {
-                bannerBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    abrirWhatsApp();
-                });
-            }
-
-            // Botão do Contato
-            const contatoBtn = document.getElementById('whatsapp-contato');
-            if (contatoBtn) {
-                contatoBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    abrirWhatsApp();
-                });
-            }
-
-            // WhatsApp Flutuante
-            const floatBtn = document.getElementById('whatsapp-float');
-            if (floatBtn) {
-                floatBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    abrirWhatsApp();
-                });
-            }
+            });
         });
 
         // ============================================
@@ -1299,7 +1388,7 @@
         // ============================================
         document.addEventListener('DOMContentLoaded', function() {
             const elementos = document.querySelectorAll(
-                '.servico-card, .diferencial-item, .depoimento-card, .galeria-item, .faq-item'
+                '.servico-card, .diferencial-item, .depoimento-card, .galeria-item, .faq-item, .video-card'
             );
 
             if (elementos.length) {
