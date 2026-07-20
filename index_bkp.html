@@ -555,7 +555,7 @@
         }
 
         /* ============================================
-           VÍDEOS - 16:9 CORRIGIDO
+           VÍDEOS - CORRIGIDO COM LINKS DO GITHUB
            ============================================ */
         .videos-grid {
             display: grid;
@@ -585,24 +585,53 @@
         }
 
         .video-wrapper {
-            background: #000;
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 = 9/16 * 100 = 56.25% */
+            background: #000;
             overflow: hidden;
-            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            aspect-ratio: 16/9;
         }
 
         .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
+            max-width: 100%;
             background: #000;
             display: block;
+            margin: 0;
+            padding: 0;
             border: none;
-            object-fit: cover;
+            box-shadow: none;
+            image-rendering: auto;
+            filter: none !important;
+            -webkit-filter: none !important;
+            transform: none;
+            -webkit-transform: none;
+            backface-visibility: visible;
+            -webkit-backface-visibility: visible;
+            transition: none;
+            position: relative;
+            z-index: 1;
+            object-fit: contain;
+        }
+
+        .video-wrapper video::-webkit-media-controls {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+
+        .video-wrapper video::-webkit-media-controls-panel {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .video-wrapper video::-webkit-media-controls-enclosure {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
         }
 
         .video-info {
@@ -1069,7 +1098,7 @@
                 margin-right: auto;
             }
             .video-wrapper {
-                padding-top: 56.25%;
+                aspect-ratio: 16/9;
             }
             .video-info {
                 padding: 18px 20px 22px;
@@ -1164,7 +1193,7 @@
                 max-width: 100%;
             }
             .video-wrapper {
-                padding-top: 56.25%;
+                aspect-ratio: 16/9;
             }
             .video-info {
                 padding: 16px 16px 20px;
@@ -1596,7 +1625,7 @@
         </div>
     </section>
 
-    <!-- ===== VÍDEOS - 16:9 CORRIGIDO ===== -->
+    <!-- ===== VÍDEOS - CORRIGIDO COM LINKS DO GITHUB ===== -->
     <section class="section" id="videos" style="background: var(--cinza-claro);">
         <div class="container">
             <h2 class="section-title">Vídeos da <span>Dra. Renata Kemp</span></h2>
@@ -1606,7 +1635,12 @@
                 <!-- Vídeo 1 - Relato de Experiência -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <video controls preload="metadata" playsinline>
+                        <video 
+                            controls 
+                            preload="auto" 
+                            playsinline
+                            style="width: 100%; height: 100%; background: #000; display: block;"
+                        >
                             <source src="https://raw.githubusercontent.com/LevitaPodologia/website/main/videos/video1.mp4" type="video/mp4">
                             Seu navegador não suporta a reprodução de vídeos.
                         </video>
@@ -1620,7 +1654,12 @@
                 <!-- Vídeo 2 - Trabalhando -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <video controls preload="metadata" playsinline>
+                        <video 
+                            controls 
+                            preload="auto" 
+                            playsinline
+                            style="width: 100%; height: 100%; background: #000; display: block;"
+                        >
                             <source src="https://raw.githubusercontent.com/LevitaPodologia/website/main/videos/video2.mp4" type="video/mp4">
                             Seu navegador não suporta a reprodução de vídeos.
                         </video>

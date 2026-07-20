@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Vídeos - Levità Podologia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #2F5D62;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #4a5f64;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .video-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+        .video-card h3 {
+            padding: 16px 20px 8px 20px;
+            font-size: 1rem;
+            color: #2F5D62;
+        }
+        .video-card p {
+            padding: 0 20px 16px 20px;
+            font-size: 0.9rem;
+            color: #4a5f64;
+        }
+        .video-wrapper {
+            background: #000;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
+        .status {
+            text-align: center;
+            margin-top: 30px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .status i {
+            color: #C9A227;
+            margin-right: 8px;
+        }
+        .btn-recarga {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 24px;
+            background: #2F5D62;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .btn-recarga:hover {
+            background: #1c3e42;
+        }
+        @media (max-width: 700px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎬 Teste de Vídeos</h1>
+    <p class="subtitle">Levità Podologia — Dra. Renata Kemp</p>
+
+    <div class="video-grid">
+        <!-- Vídeo 1 -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <video controls preload="metadata" playsinline>
+                    <source src="https://raw.githubusercontent.com/LevitaPodologia/website/main/videos/video1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+            <h3>⭐ Relato de Experiência</h3>
+            <p>Depoimento de uma paciente sobre o atendimento da Dra. Renata Kemp.</p>
+        </div>
+
+        <!-- Vídeo 2 -->
+        <div class="video-card">
+            <div class="video-wrapper">
+                <video controls preload="metadata" playsinline>
+                    <source src="https://raw.githubusercontent.com/LevitaPodologia/website/main/videos/video2.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+            <h3>🎯 Nosso Trabalho</h3>
+            <p>Veja a Dra. Renata Kemp em ação, realizando atendimentos com dedicação.</p>
+        </div>
+    </div>
+
+    <div class="status">
+        <i class="fas fa-info-circle"></i> 
+        Os vídeos estão sendo carregados diretamente do GitHub.
+        <br>
+        <button class="btn-recarga" onclick="recarregarVideos()">⟳ Recarregar Vídeos</button>
+    </div>
+</div>
+
+<!-- Font Awesome para ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script>
+    function recarregarVideos() {
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.load();
+        });
+        console.log('Vídeos recarregados!');
+    }
+
+    // Log para ajudar a identificar problemas
+    document.addEventListener('DOMContentLoaded', function() {
+        const videos = document.querySelectorAll('video');
+        videos.forEach((video, index) => {
+            video.addEventListener('error', function(e) {
+                console.error(`Erro no vídeo ${index + 1}:`, e);
+                const source = this.querySelector('source');
+                if (source) {
+                    console.log('Tentando carregar:', source.src);
+                }
+            });
+            video.addEventListener('loadedmetadata', function() {
+                console.log(`Vídeo ${index + 1} carregado com sucesso!`);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
