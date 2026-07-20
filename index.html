@@ -446,7 +446,7 @@
         }
 
         /* ============================================
-           VÍDEOS
+           VÍDEOS - SEM BARRAS PRETAS
            ============================================ */
         .videos-grid {
             display: grid;
@@ -457,6 +457,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .video-card {
             background: var(--branco);
             border-radius: 24px;
@@ -465,44 +466,62 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(168, 195, 160, 0.1);
             width: 100%;
+            display: flex;
+            flex-direction: column;
         }
+
         .video-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(47, 93, 98, 0.15);
         }
+
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+            width: 100%;
+            background: #0a0a0a;
             overflow: hidden;
-            background: #000;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 600px;
         }
+
         .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
+            max-height: 600px;
             object-fit: contain;
             background: #0a0a0a;
+            display: block;
         }
+
         .video-wrapper video::-webkit-media-controls {
             background: rgba(0, 0, 0, 0.7);
             padding: 10px;
         }
+
         .video-wrapper video::-webkit-media-controls-panel {
             background: rgba(0, 0, 0, 0.7);
         }
+
+        .video-wrapper video::-webkit-media-controls-play-button {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+
         .video-info {
             padding: 24px 28px 28px;
+            flex-shrink: 0;
         }
+
         .video-info h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.2rem;
             color: var(--petroleo);
             margin-bottom: 8px;
         }
+
         .video-info p {
             color: #4a5f64;
             font-size: 1rem;
@@ -798,7 +817,6 @@
         }
 
         @media (max-width: 992px) {
-            /* Hero */
             .hero .container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -815,8 +833,6 @@
             .hero-content h1 {
                 font-size: 2.8rem;
             }
-
-            /* Sobre */
             .sobre-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -825,44 +841,37 @@
             .sobre-texto .valores {
                 justify-content: center;
             }
-
-            /* Serviços */
             .servicos-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-
-            /* Diferenciais */
             .diferenciais-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-
-            /* Depoimentos */
             .depoimentos-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
             }
-
-            /* Contato */
             .contato-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
-            /* Galeria */
             .galeria-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 16px;
             }
-
-            /* Vídeos */
             .videos-grid {
                 gap: 30px;
                 max-width: 100%;
             }
-
-            /* Seções */
+            .video-wrapper {
+                min-height: 250px;
+                max-height: 500px;
+            }
+            .video-wrapper video {
+                max-height: 500px;
+            }
             .section {
                 padding: 60px 0;
             }
@@ -875,7 +884,6 @@
            RESPONSIVIDADE - MOBILE (768px - 992px)
            ============================================ */
         @media (max-width: 768px) {
-            /* Menu */
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -901,16 +909,12 @@
             .menu-mobile {
                 display: block;
             }
-
-            /* Hero */
             .hero-content h1 {
                 font-size: 2.2rem;
             }
             .hero-content p {
                 font-size: 1rem;
             }
-
-            /* Títulos */
             .section-title {
                 font-size: 2rem;
             }
@@ -918,8 +922,6 @@
                 font-size: 1rem;
                 margin-bottom: 32px;
             }
-
-            /* Serviços */
             .servicos-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 16px;
@@ -937,8 +939,6 @@
             .servico-card p {
                 font-size: 0.85rem;
             }
-
-            /* Diferenciais */
             .diferenciais-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 16px;
@@ -946,29 +946,30 @@
             .diferencial-item {
                 padding: 20px 16px;
             }
-
-            /* Depoimentos */
             .depoimentos-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-
-            /* Galeria */
             .galeria-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
             }
-
-            /* Vídeos */
             .videos-grid {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 30px;
                 max-width: 600px;
                 margin-left: auto;
                 margin-right: auto;
             }
+            .video-wrapper {
+                min-height: 350px;
+                max-height: 600px;
+            }
+            .video-wrapper video {
+                max-height: 600px;
+            }
             .video-info {
-                padding: 16px 20px 20px;
+                padding: 18px 20px 22px;
             }
             .video-info h3 {
                 font-size: 1.05rem;
@@ -976,34 +977,24 @@
             .video-info p {
                 font-size: 0.95rem;
             }
-
-            /* Contato */
             .contato-info .item {
                 font-size: 0.95rem;
             }
-
-            /* Logo */
             .logo img {
                 height: 32px;
             }
             .logo {
                 font-size: 1.2rem;
             }
-
-            /* Banner */
             .banner-home h2 {
                 font-size: 1.5rem;
             }
             .banner-home p {
                 font-size: 1rem;
             }
-
-            /* Seções */
             .section {
                 padding: 50px 0;
             }
-
-            /* Rodapé */
             footer .row {
                 flex-direction: column;
                 gap: 24px;
@@ -1012,8 +1003,6 @@
             footer .social {
                 justify-content: center;
             }
-
-            /* Container */
             .container {
                 padding: 0 16px;
             }
@@ -1023,7 +1012,6 @@
            RESPONSIVIDADE - MOBILE PEQUENO (480px - 768px)
            ============================================ */
         @media (max-width: 480px) {
-            /* Hero */
             .hero-content h1 {
                 font-size: 1.8rem;
             }
@@ -1035,45 +1023,40 @@
                 width: 100%;
                 text-align: center;
             }
-
-            /* Botões */
             .btn {
                 padding: 12px 24px;
                 font-size: 0.9rem;
                 width: 100%;
             }
-
-            /* Serviços */
             .servicos-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
             }
-
-            /* Diferenciais */
             .diferenciais-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
             }
-
-            /* Galeria */
             .galeria-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
-
-            /* Depoimentos */
             .depoimentos-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
             }
-
-            /* Vídeos */
             .videos-grid {
-                gap: 20px;
+                gap: 24px;
                 max-width: 100%;
             }
+            .video-wrapper {
+                min-height: 280px;
+                max-height: 500px;
+            }
+            .video-wrapper video {
+                max-height: 500px;
+            }
             .video-info {
-                padding: 14px 16px 18px;
+                padding: 16px 16px 20px;
             }
             .video-info h3 {
                 font-size: 1rem;
@@ -1081,8 +1064,6 @@
             .video-info p {
                 font-size: 0.9rem;
             }
-
-            /* Títulos */
             .section-title {
                 font-size: 1.6rem;
             }
@@ -1090,8 +1071,6 @@
                 font-size: 0.9rem;
                 margin-bottom: 24px;
             }
-
-            /* Contato */
             .contato-info .item {
                 font-size: 0.9rem;
                 gap: 12px;
@@ -1111,16 +1090,12 @@
             .contato-mapa i {
                 font-size: 3rem;
             }
-
-            /* Logo */
             .logo img {
                 height: 28px;
             }
             .logo {
                 font-size: 1rem;
             }
-
-            /* Banner */
             .banner-home {
                 padding: 30px 0;
             }
@@ -1130,13 +1105,9 @@
             .banner-home p {
                 font-size: 0.95rem;
             }
-
-            /* Seções */
             .section {
                 padding: 40px 0;
             }
-
-            /* WhatsApp Float */
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -1144,8 +1115,6 @@
                 bottom: 16px;
                 right: 16px;
             }
-
-            /* Back to Top */
             .back-top {
                 bottom: 76px;
                 right: 16px;
@@ -1153,13 +1122,9 @@
                 height: 38px;
                 font-size: 1rem;
             }
-
-            /* Container */
             .container {
                 padding: 0 12px;
             }
-
-            /* Rodapé */
             footer {
                 padding: 30px 0 16px;
             }
@@ -1173,8 +1138,6 @@
             footer .copyright {
                 font-size: 0.75rem;
             }
-
-            /* Sobre */
             .sobre-texto p {
                 font-size: 0.95rem;
             }
@@ -1182,8 +1145,6 @@
                 font-size: 0.75rem;
                 padding: 4px 12px;
             }
-
-            /* FAQ */
             .faq-pergunta {
                 padding: 14px 16px;
                 font-size: 0.95rem;
@@ -1215,6 +1176,13 @@
             }
             .container {
                 padding: 0 8px;
+            }
+            .video-wrapper {
+                min-height: 200px;
+                max-height: 400px;
+            }
+            .video-wrapper video {
+                max-height: 400px;
             }
             .video-info h3 {
                 font-size: 0.9rem;
@@ -1749,7 +1717,6 @@
                     }
                 });
 
-                // Fechar menu ao redimensionar para desktop
                 window.addEventListener('resize', function() {
                     if (window.innerWidth > 768 && navLinks.classList.contains('aberto')) {
                         navLinks.classList.remove('aberto');
@@ -1849,7 +1816,7 @@
         // OTIMIZAÇÃO PARA DISPOSITIVOS MÓVEIS
         // ============================================
         document.addEventListener('DOMContentLoaded', function() {
-            // Evitar zoom duplo toque em dispositivos móveis
+            let lastTouch = 0;
             document.addEventListener('touchend', function(e) {
                 const now = Date.now();
                 if (now - lastTouch < 300) {
@@ -1857,9 +1824,7 @@
                 }
                 lastTouch = now;
             }, { passive: false });
-            let lastTouch = 0;
 
-            // Ajustar altura do hero em dispositivos móveis
             function ajustarHero() {
                 const hero = document.querySelector('.hero');
                 if (hero && window.innerWidth < 768) {
