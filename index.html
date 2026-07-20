@@ -4,25 +4,775 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Levita Podologia – Leveza para cada passo</title>
-    <meta name="description" content="Clínica de podologia com atendimento humanizado, foco em prevenção, tratamento e bem-estar dos pés. Especialistas em pé diabético, unha encravada, podogeriatria e mais." />
+    <meta name="description" content="Clínica de podologia com atendimento humanizado em Guarulhos. Especialistas em pé diabético, unha encravada e mais. Agende sua visita domiciliar." />
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     
-    <!-- CSS Principal -->
-    <link rel="stylesheet" href="css/style.css" />
-    
-    <!-- CSS de Animações -->
-    <link rel="stylesheet" href="css/animations.css" />
-    
-    <!-- CSS de Componentes -->
-    <link rel="stylesheet" href="css/components.css" />
-    
-    <!-- CSS de Tema -->
-    <link rel="stylesheet" href="css/theme.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #1e2b2f;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #1e2b2f;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #4a5f64;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-size: 1.1rem;
+        }
+        .section-title span {
+            color: #C9A227;
+        }
+
+        /* ===== CORES ===== */
+        :root {
+            --salvia: #A8C3A0;
+            --petroleo: #2F5D62;
+            --petroleo-escuro: #1c3e42;
+            --bege: #F4EFE8;
+            --dourado: #C9A227;
+            --branco: #FFFFFF;
+            --cinza-claro: #F7F8FA;
+            --texto: #1e2b2f;
+            --sombra: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ===== BOTÕES ===== */
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+        }
+        .btn-primario {
+            background: var(--petroleo);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(47, 93, 98, 0.25);
+        }
+        .btn-primario:hover {
+            background: var(--petroleo-escuro);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(47, 93, 98, 0.35);
+        }
+        .btn-secundario {
+            background: transparent;
+            color: var(--petroleo);
+            border: 2px solid var(--petroleo);
+        }
+        .btn-secundario:hover {
+            background: var(--petroleo);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            padding: 12px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+        }
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--petroleo);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        .logo span {
+            color: var(--dourado);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        nav ul li a {
+            color: var(--texto);
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dourado);
+            transition: width 0.3s;
+        }
+        nav ul li a:hover {
+            color: var(--petroleo);
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        .menu-mobile {
+            display: none;
+            font-size: 1.6rem;
+            color: var(--petroleo);
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f9fbf9 0%, #edf3ec 100%);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: #1e2b2f;
+            margin-bottom: 20px;
+        }
+        .hero-content h1 span {
+            color: var(--dourado);
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #4a5f64;
+            max-width: 500px;
+            margin-bottom: 32px;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(47, 93, 98, 0.15);
+        }
+
+        /* ===== BANNER DOMICÍLIO ===== */
+        .banner-home {
+            background: var(--petroleo);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .banner-home h2 {
+            color: #fff;
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .banner-home h2 i {
+            color: var(--dourado);
+            margin-right: 12px;
+        }
+        .banner-home p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 8px auto 0;
+        }
+        .banner-home .highlight {
+            color: var(--dourado);
+            font-weight: 700;
+        }
+        .banner-home .btn-whatsapp {
+            margin-top: 20px;
+        }
+
+        /* ===== SOBRE ===== */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .sobre-texto p {
+            font-size: 1.1rem;
+            color: #2d4449;
+            margin-bottom: 20px;
+        }
+        .sobre-texto .valores {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 16px;
+        }
+        .sobre-texto .valores span {
+            background: var(--bege);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--petroleo);
+        }
+        .sobre-imagem img {
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        /* ===== SERVIÇOS ===== */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .servico-card {
+            background: var(--branco);
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(168, 195, 160, 0.1);
+        }
+        .servico-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(47, 93, 98, 0.08);
+            border-color: var(--salvia);
+        }
+        .servico-card i {
+            font-size: 2.4rem;
+            color: var(--petroleo);
+            background: var(--bege);
+            padding: 16px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .servico-card h3 {
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--petroleo);
+            margin-bottom: 6px;
+        }
+        .servico-card p {
+            font-size: 0.9rem;
+            color: #4a5f64;
+        }
+
+        /* ===== DIFERENCIAIS ===== */
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .diferencial-item {
+            background: var(--branco);
+            padding: 32px 24px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--sombra);
+            border-top: 4px solid var(--dourado);
+            transition: 0.3s;
+        }
+        .diferencial-item:hover {
+            transform: translateY(-4px);
+        }
+        .diferencial-item i {
+            font-size: 2.2rem;
+            color: var(--petroleo);
+            margin-bottom: 12px;
+        }
+        .diferencial-item h4 {
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--petroleo);
+        }
+        .diferencial-item p {
+            font-size: 0.95rem;
+            color: #4a5f64;
+            margin-top: 4px;
+        }
+
+        /* ===== GALERIA ===== */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .galeria-item {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            background: var(--bege);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .galeria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .galeria-item.placeholder {
+            background-color: var(--bege);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="%232F5D62" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4L20 20"/><path d="M20 4L4 20"/></svg>');
+            background-size: 40px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* ===== DEPOIMENTOS ===== */
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .depoimento-card {
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(168, 195, 160, 0.1);
+        }
+        .depoimento-card .stars {
+            color: var(--dourado);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .depoimento-card p {
+            font-style: italic;
+            color: #2d4449;
+            margin-bottom: 16px;
+        }
+        .depoimento-card .autor {
+            font-weight: 600;
+            color: var(--petroleo);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-lista {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--branco);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(168, 195, 160, 0.1);
+            overflow: hidden;
+        }
+        .faq-pergunta {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--petroleo);
+            transition: background 0.2s;
+        }
+        .faq-pergunta:hover {
+            background: var(--bege);
+        }
+        .faq-pergunta i {
+            transition: transform 0.3s;
+            color: var(--dourado);
+        }
+        .faq-item.ativo .faq-pergunta i {
+            transform: rotate(180deg);
+        }
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: #3a4f54;
+        }
+        .faq-item.ativo .faq-resposta {
+            max-height: 300px;
+            padding: 0 24px 20px 24px;
+        }
+
+        /* ===== CONTATO ===== */
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .contato-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contato-info .item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.05rem;
+        }
+        .contato-info .item i {
+            font-size: 1.4rem;
+            width: 44px;
+            height: 44px;
+            background: var(--bege);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--petroleo);
+        }
+        .contato-box {
+            background: var(--bege);
+            padding: 24px;
+            border-radius: 16px;
+            border-left: 4px solid var(--dourado);
+        }
+        .contato-box h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--petroleo);
+            margin-bottom: 4px;
+        }
+        .contato-box p {
+            color: #3a4f54;
+        }
+        .contato-mapa {
+            background: var(--bege);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 250px;
+        }
+        .contato-mapa i {
+            font-size: 4rem;
+            color: var(--petroleo);
+            opacity: 0.2;
+            margin-bottom: 16px;
+        }
+        .contato-mapa h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--petroleo);
+        }
+        .contato-mapa p {
+            color: #4a5f64;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background: var(--petroleo);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0 20px;
+        }
+        footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        footer .col h4 {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        footer .col p,
+        footer .col a {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        footer .col a:hover {
+            color: var(--dourado);
+        }
+        footer .social {
+            display: flex;
+            gap: 14px;
+            margin-top: 8px;
+        }
+        footer .social a {
+            background: rgba(255, 255, 255, 0.08);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        footer .social a:hover {
+            background: var(--dourado);
+            color: #fff;
+        }
+        footer .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 30px;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2rem;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-top {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            z-index: 999;
+            background: var(--petroleo);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .back-top.visivel {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-top:hover {
+            background: var(--petroleo-escuro);
+            transform: translateY(-4px);
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .sobre-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .sobre-texto .valores {
+                justify-content: center;
+            }
+            .servicos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .diferenciais-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .depoimentos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .contato-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                gap: 16px;
+                text-align: center;
+            }
+            nav ul.aberto {
+                display: flex;
+            }
+            .menu-mobile {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .servicos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+            }
+            .depoimentos-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .logo img {
+                height: 32px;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            .back-top {
+                bottom: 80px;
+                right: 20px;
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+            .logo img {
+                height: 28px;
+            }
+            .logo {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -51,50 +801,45 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="inicio">
-        <div class="forma forma-1"></div>
-        <div class="forma forma-2"></div>
         <div class="container">
-            <div class="hero-conteudo">
+            <div class="hero-content">
                 <h1>Leveza para <span>cada passo</span></h1>
                 <p>
                     Cuidamos dos seus pés com dedicação, conhecimento e carinho para que você
                     continue caminhando com conforto e segurança.
                 </p>
-                <div class="hero-botoes">
-                    <a href="https://wa.me/5511978303833?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Renata%20Kemp." target="_blank" class="btn btn-whatsapp">
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-whatsapp" id="whatsapp-hero">
                         <i class="fab fa-whatsapp"></i> Agendar Consulta
                     </a>
                     <a href="#servicos" class="btn btn-secundario">Conheça os Tratamentos</a>
                 </div>
             </div>
-            <div class="hero-imagem">
+            <div class="hero-image">
                 <img src="images/hero.png" alt="Cuidado com os pés - Levità Podologia" />
             </div>
         </div>
     </section>
 
     <!-- ===== BANNER ATENDIMENTO DOMICILIAR ===== -->
-    <section class="banner-atendimento">
+    <section class="banner-home">
         <div class="container">
             <h2><i class="fas fa-home"></i> Atendimento Domiciliar</h2>
             <p>
-                <strong>Agende seu horário e <span class="destaque">vamos até você</span>!</strong><br />
-                Atendemos com conforto, segurança e todo o cuidado que você merece no conforto da sua casa.
+                <strong>Agende seu horário e <span class="highlight">vamos até você</span>!</strong><br />
+                Atendimento em Guarulhos e região com conforto, segurança e todo o cuidado que você merece.
             </p>
-            <p style="margin-top: 8px; font-size: 1.1rem;">
-                <i class="fas fa-map-marker-alt" style="color: var(--dourado);"></i>
-                <strong>Área de atendimento:</strong> Guarulhos e região
-            </p>
-            <a href="https://wa.me/5511978303833?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20a%20Renata%20Kemp." target="_blank" class="btn btn-whatsapp">
+            <a href="#" class="btn btn-whatsapp" id="whatsapp-banner">
                 <i class="fab fa-whatsapp"></i> Agendar Visita Domiciliar
             </a>
         </div>
     </section>
 
     <!-- ===== SOBRE ===== -->
-    <section id="sobre">
+    <section class="section" id="sobre">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">Nossa Essência</h2>
+            <h2 class="section-title">Nossa <span>Essência</span></h2>
+            <p class="section-subtitle">Cuidar dos pés é cuidar da liberdade de viver.</p>
             <div class="sobre-grid">
                 <div class="sobre-texto">
                     <p>
@@ -112,7 +857,7 @@
                     </p>
                     <p>
                         <i class="fas fa-home" style="color: var(--dourado);"></i>
-                        <strong>Atendimento Domiciliar</strong> – Levamos todo o cuidado e estrutura até você.
+                        <strong>Atendimento Domiciliar</strong> – Levamos todo o cuidado e estrutura até você em Guarulhos e região.
                     </p>
                     <div class="valores">
                         <span>Humanização</span>
@@ -133,58 +878,60 @@
     </section>
 
     <!-- ===== SERVIÇOS ===== -->
-    <section id="servicos" class="section-bg">
+    <section class="section" id="servicos" style="background: var(--cinza-claro);">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">Nossos Tratamentos</h2>
+            <h2 class="section-title">Nossos <span>Tratamentos</span></h2>
+            <p class="section-subtitle">Cuidados especializados para a saúde dos seus pés.</p>
             <div class="servicos-grid">
                 <div class="servico-card">
                     <i class="fas fa-user-md"></i>
                     <h3>Podologia Clínica</h3>
-                    <p>Avaliação e tratamento de alterações nos pés com técnicas modernas e seguras.</p>
+                    <p>Avaliação e tratamento de alterações nos pés.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-heartbeat"></i>
                     <h3>Pé Diabético</h3>
-                    <p>Cuidados especializados para prevenção e tratamento de complicações em pacientes diabéticos.</p>
+                    <p>Cuidados preventivos e tratamento especializado.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-user-plus"></i>
                     <h3>Podogeriatria</h3>
-                    <p>Atendimento voltado às necessidades específicas dos pés na terceira idade.</p>
+                    <p>Atendimento voltado à terceira idade.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-exclamation-triangle"></i>
                     <h3>Unha Encravada</h3>
-                    <p>Tratamento eficaz e minimamente invasivo para alívio da dor e prevenção de recidivas.</p>
+                    <p>Tratamento eficaz e minimamente invasivo.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-circle"></i>
                     <h3>Calos e Calosidades</h3>
-                    <p>Remoção segura e orientação para evitar o retorno dos calos.</p>
+                    <p>Remoção segura com orientação preventiva.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-biohazard"></i>
                     <h3>Verrugas Plantares</h3>
-                    <p>Tratamento com técnicas indolores e alta eficácia.</p>
+                    <p>Tratamento com técnicas indolores e eficazes.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-spa"></i>
                     <h3>Micose</h3>
-                    <p>Diagnóstico e tratamento para infecções fúngicas, com acompanhamento personalizado.</p>
+                    <p>Diagnóstico e tratamento para infecções fúngicas.</p>
                 </div>
                 <div class="servico-card">
                     <i class="fas fa-shoe-prints"></i>
                     <h3>Órteses</h3>
-                    <p>Indicação e confecção de palmilhas e dispositivos para melhorar a pisada e o conforto.</p>
+                    <p>Palmilhas e dispositivos para melhorar a pisada.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== DIFERENCIAIS ===== -->
-    <section id="diferenciais">
+    <section class="section" id="diferenciais">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">Por que escolher a Levità</h2>
+            <h2 class="section-title">Por que escolher a <span>Levitatà</span></h2>
+            <p class="section-subtitle">Diferenciais que fazem a diferença no seu cuidado.</p>
             <div class="diferenciais-grid">
                 <div class="diferencial-item">
                     <i class="fas fa-hand-holding-heart"></i>
@@ -192,14 +939,14 @@
                     <p>Cada paciente é único e tratado com toda atenção e respeito.</p>
                 </div>
                 <div class="diferencial-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h4>Equipamentos Esterilizados</h4>
-                    <p>Biossegurança rigorosa em todos os procedimentos.</p>
-                </div>
-                <div class="diferencial-item">
                     <i class="fas fa-home"></i>
                     <h4>Atendimento Domiciliar</h4>
                     <p>Levamos todo o cuidado e estrutura até sua casa.</p>
+                </div>
+                <div class="diferencial-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Equipamentos Esterilizados</h4>
+                    <p>Biossegurança rigorosa em todos os procedimentos.</p>
                 </div>
                 <div class="diferencial-item">
                     <i class="fas fa-user-circle"></i>
@@ -220,11 +967,11 @@
         </div>
     </section>
 
-    <!-- ===== GALERIA ANTES E DEPOIS ===== -->
-    <section id="galeria" class="section-bg">
+    <!-- ===== GALERIA ===== -->
+    <section class="section" id="galeria" style="background: var(--cinza-claro);">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">Antes e Depois</h2>
-            <p style="text-align:center; max-width:600px; margin:10px auto 0; color:#3a4f54;">Resultados reais que transformam a qualidade de vida de nossos pacientes.</p>
+            <h2 class="section-title">Antes e <span>Depois</span></h2>
+            <p class="section-subtitle">Resultados reais que transformam a qualidade de vida.</p>
             <div class="galeria-grid">
                 <div class="galeria-item">
                     <img src="images/antes1.png" alt="Antes do tratamento" />
@@ -238,36 +985,33 @@
                 <div class="galeria-item">
                     <img src="images/depois2.png" alt="Depois do tratamento" />
                 </div>
-                <div class="galeria-item placeholder">
-                    <span>Em breve</span>
-                </div>
-                <div class="galeria-item placeholder">
-                    <span>Em breve</span>
-                </div>
+                <div class="galeria-item placeholder"></div>
+                <div class="galeria-item placeholder"></div>
             </div>
-            <p style="text-align:center; font-size:0.85rem; margin-top:16px; color:#4a5f64;">
+            <p style="text-align:center; font-size:0.85rem; margin-top:20px; color:#4a5f64;">
                 <i class="fas fa-lock" style="margin-right:6px;"></i> Imagens com autorização dos pacientes.
             </p>
         </div>
     </section>
 
     <!-- ===== DEPOIMENTOS ===== -->
-    <section id="depoimentos">
+    <section class="section" id="depoimentos">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">O que nossos pacientes dizem</h2>
+            <h2 class="section-title">O que nossos <span>pacientes dizem</span></h2>
+            <p class="section-subtitle">Depoimentos reais de quem confiou no nosso trabalho.</p>
             <div class="depoimentos-grid">
                 <div class="depoimento-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>"Excelente atendimento. A Renata veio até minha casa e resolveu meu problema com unha encravada. Super recomendo!"</p>
                     <div class="autor">— Maria A.</div>
                 </div>
                 <div class="depoimento-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>"Sou diabética e sempre tive receio de cuidar dos pés. O atendimento domiciliar da Renata me trouxe muita segurança."</p>
                     <div class="autor">— Helena S.</div>
                 </div>
                 <div class="depoimento-card">
-                    <div class="estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>"Minha mãe de 82 anos foi atendida em casa com todo carinho. Profissionalismo e dedicação que emocionam."</p>
                     <div class="autor">— Roberto C.</div>
                 </div>
@@ -276,9 +1020,10 @@
     </section>
 
     <!-- ===== FAQ ===== -->
-    <section id="faq" class="section-bg">
+    <section class="section" id="faq" style="background: var(--cinza-claro);">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">Perguntas Frequentes</h2>
+            <h2 class="section-title">Perguntas <span>Frequentes</span></h2>
+            <p class="section-subtitle">Tire suas dúvidas sobre nossos serviços e atendimento.</p>
             <div class="faq-lista">
                 <div class="faq-item ativo">
                     <div class="faq-pergunta">
@@ -330,12 +1075,13 @@
     </section>
 
     <!-- ===== CONTATO ===== -->
-    <section id="contato">
+    <section class="section" id="contato">
         <div class="container">
-            <h2 class="subtitulo centro" style="display:block; text-align:center;">Entre em contato</h2>
+            <h2 class="section-title">Entre em <span>contato</span></h2>
+            <p class="section-subtitle">Agende sua consulta ou tire suas dúvidas.</p>
             <div class="contato-grid">
                 <div class="contato-info">
-                    <div class="atendimento-destaque">
+                    <div class="contato-box">
                         <h4><i class="fas fa-home" style="color: var(--dourado);"></i> Atendimento Domiciliar</h4>
                         <p>Agende seu horário e vamos até você!</p>
                         <p style="font-size: 0.95rem; margin-top: 4px;">
@@ -359,7 +1105,7 @@
                         <i class="fas fa-clock"></i>
                         <span>Seg–Sex: 8h–19h | Sáb: 8h–13h</span>
                     </div>
-                    <a href="https://wa.me/5511978303833?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20a%20Renata%20Kemp." target="_blank" class="btn btn-whatsapp" style="align-self:flex-start; margin-top:10px;">
+                    <a href="#" class="btn btn-whatsapp" id="whatsapp-contato">
                         <i class="fab fa-whatsapp"></i> Agendar Visita Domiciliar
                     </a>
                 </div>
@@ -414,30 +1160,180 @@
     </footer>
 
     <!-- ===== WHATSAPP FLUTUANTE ===== -->
-    <a href="https://wa.me/5511978303833?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20a%20Renata%20Kemp." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <a href="#" class="whatsapp-float" id="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <div class="back-top" id="back-top" aria-label="Voltar ao topo">
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- ===== BOTÃO TEMA CLARO/ESCURO ===== -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <!-- ===== JAVASCRIPT ===== -->
-    <!-- Scripts Principais -->
-    <script src="js/script.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/faq.js"></script>
-    <script src="js/animations.js"></script>
-    
-    <!-- Scripts que você já criou -->
-    <script src="js/theme.js"></script>
-    <script src="js/whatsapp.js"></script>
+    <script>
+        // ============================================
+        // WHATSAPP COM MENSAGEM PERSONALIZADA
+        // ============================================
+        const numeroWhatsApp = '5511978303833';
+        const mensagemPersonalizada = 'Olá, vim pelo seu site e gostaria de agendar uma consulta com a Dra. Renata Kemp.';
+
+        // Função para abrir WhatsApp com a mensagem personalizada
+        function abrirWhatsApp() {
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemPersonalizada)}`;
+            window.open(url, '_blank');
+        }
+
+        // Adicionar evento a todos os botões e ícones do WhatsApp
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botão do Hero
+            const heroBtn = document.getElementById('whatsapp-hero');
+            if (heroBtn) {
+                heroBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    abrirWhatsApp();
+                });
+            }
+
+            // Botão do Banner
+            const bannerBtn = document.getElementById('whatsapp-banner');
+            if (bannerBtn) {
+                bannerBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    abrirWhatsApp();
+                });
+            }
+
+            // Botão do Contato
+            const contatoBtn = document.getElementById('whatsapp-contato');
+            if (contatoBtn) {
+                contatoBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    abrirWhatsApp();
+                });
+            }
+
+            // WhatsApp Flutuante
+            const floatBtn = document.getElementById('whatsapp-float');
+            if (floatBtn) {
+                floatBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    abrirWhatsApp();
+                });
+            }
+        });
+
+        // ============================================
+        // MENU MOBILE
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('aberto');
+                });
+
+                document.querySelectorAll('#nav-links a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('aberto');
+                    });
+                });
+
+                document.addEventListener('click', function(event) {
+                    const isClickInside = navLinks.contains(event.target) || menuToggle.contains(event.target);
+                    if (!isClickInside) {
+                        navLinks.classList.remove('aberto');
+                    }
+                });
+            }
+        });
+
+        // ============================================
+        // FAQ ACORDEÃO
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-pergunta');
+
+            if (faqItems.length) {
+                faqItems.forEach(function(pergunta) {
+                    pergunta.addEventListener('click', function() {
+                        const item = this.parentElement;
+                        const isAtivo = item.classList.contains('ativo');
+
+                        document.querySelectorAll('.faq-item').forEach(function(i) {
+                            i.classList.remove('ativo');
+                        });
+
+                        if (!isAtivo) {
+                            item.classList.add('ativo');
+                        }
+                    });
+                });
+            }
+        });
+
+        // ============================================
+        // BACK TO TOP
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const backTop = document.getElementById('back-top');
+
+            if (backTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 400) {
+                        backTop.classList.add('visivel');
+                    } else {
+                        backTop.classList.remove('visivel');
+                    }
+                });
+
+                backTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+
+        // ============================================
+        // ANIMAÇÕES DE ENTRADA
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementos = document.querySelectorAll(
+                '.servico-card, .diferencial-item, .depoimento-card, .galeria-item, .faq-item'
+            );
+
+            if (elementos.length) {
+                elementos.forEach(function(el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                });
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                elementos.forEach(function(el) {
+                    observer.observe(el);
+                });
+
+                setTimeout(function() {
+                    elementos.forEach(function(el) {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight) {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, 200);
+            }
+        });
+    </script>
 
 </body>
 </html>
