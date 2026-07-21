@@ -555,102 +555,57 @@
         }
 
         /* ============================================
-           VÍDEOS - CORRIGIDO COM LINKS DO GITHUB
+           VÍDEOS - FORMATO CORRETO
            ============================================ */
         .videos-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 30px auto 0;
         }
 
         .video-card {
-            background: var(--branco);
-            border-radius: 24px;
+            background: #f8f9fa;
+            border-radius: 18px;
             overflow: hidden;
             box-shadow: var(--sombra);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(168, 195, 160, 0.1);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(47, 93, 98, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         }
 
         .video-wrapper {
             position: relative;
             width: 100%;
-            background: #000;
+            aspect-ratio: 16 / 9;
+            background: #111;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            aspect-ratio: 16/9;
         }
 
         .video-wrapper video {
+            display: block;
             width: 100%;
             height: 100%;
-            max-width: 100%;
-            background: #000;
-            display: block;
-            margin: 0;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-            image-rendering: auto;
-            filter: none !important;
-            -webkit-filter: none !important;
-            transform: none;
-            -webkit-transform: none;
-            backface-visibility: visible;
-            -webkit-backface-visibility: visible;
-            transition: none;
-            position: relative;
-            z-index: 1;
             object-fit: contain;
+            background: #111;
         }
 
-        .video-wrapper video::-webkit-media-controls {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-        }
-
-        .video-wrapper video::-webkit-media-controls-panel {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .video-wrapper video::-webkit-media-controls-enclosure {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-        }
-
-        .video-info {
-            padding: 24px 28px 28px;
-            flex-shrink: 0;
-            background: #ffffff;
-        }
-
-        .video-info h3 {
+        .video-card h3 {
+            padding: 20px 22px 8px;
+            font-size: 1.15rem;
             font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
             color: var(--petroleo);
-            margin-bottom: 8px;
         }
 
-        .video-info p {
-            color: #4a5f64;
-            font-size: 1rem;
+        .video-card p {
+            padding: 0 22px 22px;
+            font-size: 0.95rem;
             line-height: 1.6;
+            color: #4a5f64;
         }
 
         /* ============================================
@@ -987,7 +942,8 @@
                 gap: 16px;
             }
             .videos-grid {
-                gap: 30px;
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
                 max-width: 100%;
             }
             .section {
@@ -1092,22 +1048,18 @@
             }
             .videos-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 25px;
                 max-width: 600px;
                 margin-left: auto;
                 margin-right: auto;
             }
-            .video-wrapper {
-                aspect-ratio: 16/9;
+            .video-card h3 {
+                padding: 16px 18px 6px;
+                font-size: 1rem;
             }
-            .video-info {
-                padding: 18px 20px 22px;
-            }
-            .video-info h3 {
-                font-size: 1.05rem;
-            }
-            .video-info p {
-                font-size: 0.95rem;
+            .video-card p {
+                padding: 0 18px 18px;
+                font-size: 0.9rem;
             }
             .contato-info .item {
                 font-size: 0.95rem;
@@ -1189,20 +1141,16 @@
                 font-size: 0.85rem;
             }
             .videos-grid {
-                gap: 24px;
+                gap: 20px;
                 max-width: 100%;
             }
-            .video-wrapper {
-                aspect-ratio: 16/9;
+            .video-card h3 {
+                font-size: 0.95rem;
+                padding: 14px 16px 4px;
             }
-            .video-info {
-                padding: 16px 16px 20px;
-            }
-            .video-info h3 {
-                font-size: 1rem;
-            }
-            .video-info p {
-                font-size: 0.9rem;
+            .video-card p {
+                font-size: 0.85rem;
+                padding: 0 16px 16px;
             }
             .section-title {
                 font-size: 1.6rem;
@@ -1314,10 +1262,10 @@
             .container {
                 padding: 0 8px;
             }
-            .video-info h3 {
-                font-size: 0.9rem;
+            .video-card h3 {
+                font-size: 0.85rem;
             }
-            .video-info p {
+            .video-card p {
                 font-size: 0.8rem;
             }
             .caso-item {
@@ -1625,7 +1573,7 @@
         </div>
     </section>
 
-    <!-- ===== VÍDEOS - CORRIGIDO COM LINKS DO GITHUB ===== -->
+    <!-- ===== VÍDEOS - FORMATO CORRETO ===== -->
     <section class="section" id="videos" style="background: var(--cinza-claro);">
         <div class="container">
             <h2 class="section-title">Vídeos da <span>Dra. Renata Kemp</span></h2>
@@ -1635,47 +1583,26 @@
                 <!-- Vídeo 1 - Relato de Experiência -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <video 
-                            controls 
-                            preload="auto" 
-                            playsinline
-                            style="width: 100%; height: 100%; background: #000; display: block;"
-                        >
+                        <video controls preload="metadata" playsinline>
                             <source src="https://raw.githubusercontent.com/LevitaPodologia/website/main/videos/video1.mp4" type="video/mp4">
                             Seu navegador não suporta a reprodução de vídeos.
                         </video>
                     </div>
-                    <div class="video-info">
-                        <h3><i class="fas fa-star" style="color: var(--dourado);"></i> Relato de Experiência</h3>
-                        <p>Depoimento emocionante de uma paciente sobre o atendimento da <strong>Dra. Renata Kemp</strong> e os resultados transformadores do tratamento.</p>
-                    </div>
+                    <h3><i class="fas fa-star" style="color: var(--dourado);"></i> Relato de Experiência</h3>
+                    <p>Depoimento emocionante de uma paciente sobre o atendimento da <strong>Dra. Renata Kemp</strong> e os resultados transformadores do tratamento.</p>
                 </div>
                 
                 <!-- Vídeo 2 - Trabalhando -->
                 <div class="video-card">
                     <div class="video-wrapper">
-                        <video 
-                            controls 
-                            preload="auto" 
-                            playsinline
-                            style="width: 100%; height: 100%; background: #000; display: block;"
-                        >
+                        <video controls preload="metadata" playsinline>
                             <source src="https://raw.githubusercontent.com/LevitaPodologia/website/main/videos/video2.mp4" type="video/mp4">
                             Seu navegador não suporta a reprodução de vídeos.
                         </video>
                     </div>
-                    <div class="video-info">
-                        <h3><i class="fas fa-play-circle" style="color: var(--dourado);"></i> Nosso Trabalho</h3>
-                        <p>Veja a <strong>Dra. Renata Kemp</strong> em ação, realizando atendimentos com cuidado, dedicação e profissionalismo.</p>
-                    </div>
+                    <h3><i class="fas fa-play-circle" style="color: var(--dourado);"></i> Nosso Trabalho</h3>
+                    <p>Veja a <strong>Dra. Renata Kemp</strong> em ação, realizando atendimentos com cuidado, dedicação e profissionalismo.</p>
                 </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="color: #8a9ea3; font-size: 0.85rem;">
-                    <i class="fas fa-info-circle" style="color: var(--dourado); margin-right: 8px;"></i>
-                    Vídeos hospedados no GitHub
-                </p>
             </div>
         </div>
     </section>
@@ -2035,25 +1962,6 @@
             }
             ajustarHero();
             window.addEventListener('resize', ajustarHero);
-        });
-
-        // ============================================
-        // LOG PARA DEBUG DOS VÍDEOS
-        // ============================================
-        document.addEventListener('DOMContentLoaded', function() {
-            const videos = document.querySelectorAll('.video-wrapper video');
-            videos.forEach((video, index) => {
-                video.addEventListener('error', function(e) {
-                    console.error(`Erro no vídeo ${index + 1}:`, e);
-                    const source = this.querySelector('source');
-                    if (source) {
-                        console.log('Tentando carregar:', source.src);
-                    }
-                });
-                video.addEventListener('loadedmetadata', function() {
-                    console.log(`Vídeo ${index + 1} carregado com sucesso!`);
-                });
-            });
         });
     </script>
 
