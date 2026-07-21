@@ -14,7 +14,7 @@
     
     <style>
         /* ============================================
-           RESET & BASE (seu código existente)
+           RESET & BASE
            ============================================ */
         * {
             margin: 0;
@@ -134,19 +134,9 @@
             color: #fff;
             transform: translateY(-3px);
         }
-        .btn-agendamento {
-            background: var(--dourado);
-            color: #fff;
-            box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
-        }
-        .btn-agendamento:hover {
-            background: #b8921f;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(201, 162, 39, 0.4);
-        }
 
         /* ============================================
-           HEADER (seu código existente)
+           HEADER
            ============================================ */
         header {
             position: fixed;
@@ -229,7 +219,7 @@
         }
 
         /* ============================================
-           HERO (seu código existente - com botão agendamento)
+           HERO
            ============================================ */
         .hero {
             min-height: 90vh;
@@ -276,7 +266,7 @@
         }
 
         /* ============================================
-           BANNER DOMICÍLIO (seu código existente)
+           BANNER DOMICÍLIO
            ============================================ */
         .banner-home {
             background: var(--petroleo);
@@ -306,13 +296,9 @@
         .banner-home .btn-whatsapp {
             margin-top: 20px;
         }
-        .banner-home .btn-agendamento {
-            margin-top: 12px;
-            margin-left: 8px;
-        }
 
         /* ============================================
-           SOBRE (seu código existente)
+           SOBRE
            ============================================ */
         .sobre-grid {
             display: grid;
@@ -350,7 +336,7 @@
         }
 
         /* ============================================
-           SERVIÇOS (seu código existente)
+           SERVIÇOS
            ============================================ */
         .servicos-grid {
             display: grid;
@@ -393,7 +379,7 @@
         }
 
         /* ============================================
-           DIFERENCIAIS (seu código existente)
+           DIFERENCIAIS
            ============================================ */
         .diferenciais-grid {
             display: grid;
@@ -430,7 +416,7 @@
         }
 
         /* ============================================
-           GALERIA (seu código existente)
+           GALERIA - CASOS SEPARADOS
            ============================================ */
         .caso-container {
             background: var(--branco);
@@ -441,14 +427,17 @@
             border: 1px solid rgba(168, 195, 160, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .caso-container:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px rgba(47, 93, 98, 0.08);
         }
+
         .caso-titulo {
             text-align: center;
             margin-bottom: 30px;
         }
+
         .badge-caso {
             display: inline-block;
             background: var(--dourado);
@@ -461,21 +450,25 @@
             letter-spacing: 1px;
             margin-bottom: 10px;
         }
+
         .caso-titulo h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.8rem;
             color: var(--petroleo);
             margin-bottom: 8px;
         }
+
         .caso-titulo h3 i {
             margin-right: 12px;
         }
+
         .caso-descricao {
             color: #4a5f64;
             font-size: 1rem;
             max-width: 500px;
             margin: 0 auto;
         }
+
         .caso-grid {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -483,6 +476,7 @@
             align-items: center;
             margin: 20px 0 16px;
         }
+
         .caso-item {
             border-radius: 16px;
             overflow: hidden;
@@ -491,12 +485,14 @@
             aspect-ratio: 1/1;
             background: var(--bege);
         }
+
         .caso-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
+
         .caso-label {
             position: absolute;
             top: 12px;
@@ -510,12 +506,15 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .caso-item.antes .caso-label {
             background: rgba(220, 53, 69, 0.85);
         }
+
         .caso-item.depois .caso-label {
             background: rgba(40, 167, 69, 0.85);
         }
+
         .caso-legenda {
             padding: 12px 16px;
             font-size: 0.85rem;
@@ -523,9 +522,11 @@
             background: var(--cinza-claro);
             border-radius: 0 0 16px 16px;
         }
+
         .caso-legenda i {
             margin-right: 6px;
         }
+
         .caso-seta {
             font-size: 2.5rem;
             color: var(--dourado);
@@ -534,6 +535,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .caso-resultado {
             background: var(--bege);
             padding: 16px 24px;
@@ -542,16 +544,18 @@
             margin-top: 16px;
             border-left: 4px solid var(--dourado);
         }
+
         .caso-resultado i {
             margin-right: 8px;
         }
+
         .caso-resultado span {
             font-size: 0.95rem;
             color: #2d4449;
         }
 
         /* ============================================
-           VÍDEOS (seu código existente)
+           VÍDEOS - FORMATO CORRETO
            ============================================ */
         .videos-grid {
             display: grid;
@@ -560,6 +564,7 @@
             max-width: 1100px;
             margin: 30px auto 0;
         }
+
         .video-card {
             background: #f8f9fa;
             border-radius: 18px;
@@ -567,10 +572,12 @@
             box-shadow: var(--sombra);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .video-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         }
+
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -578,6 +585,7 @@
             background: #111;
             overflow: hidden;
         }
+
         .video-wrapper video {
             display: block;
             width: 100%;
@@ -585,12 +593,14 @@
             object-fit: contain;
             background: #111;
         }
+
         .video-card h3 {
             padding: 20px 22px 8px;
             font-size: 1.15rem;
             font-family: 'Poppins', sans-serif;
             color: var(--petroleo);
         }
+
         .video-card p {
             padding: 0 22px 22px;
             font-size: 0.95rem;
@@ -599,7 +609,7 @@
         }
 
         /* ============================================
-           DEPOIMENTOS (seu código existente)
+           DEPOIMENTOS
            ============================================ */
         .depoimentos-grid {
             display: grid;
@@ -629,7 +639,7 @@
         }
 
         /* ============================================
-           FAQ (seu código existente)
+           FAQ
            ============================================ */
         .faq-lista {
             max-width: 800px;
@@ -680,7 +690,7 @@
         }
 
         /* ============================================
-           CONTATO (seu código existente)
+           CONTATO
            ============================================ */
         .contato-grid {
             display: grid;
@@ -752,7 +762,7 @@
         }
 
         /* ============================================
-           RODAPÉ (seu código existente)
+           RODAPÉ
            ============================================ */
         footer {
             background: var(--petroleo);
@@ -810,7 +820,7 @@
         }
 
         /* ============================================
-           WHATSAPP FLOAT (seu código existente)
+           WHATSAPP FLOAT
            ============================================ */
         .whatsapp-float {
             position: fixed;
@@ -839,7 +849,7 @@
         }
 
         /* ============================================
-           BACK TO TOP (seu código existente)
+           BACK TO TOP
            ============================================ */
         .back-top {
             position: fixed;
@@ -872,291 +882,6 @@
         }
         .back-top:active {
             transform: scale(0.92);
-        }
-
-        /* ============================================
-           SISTEMA DE AGENDAMENTO - NOVO CSS
-           ============================================ */
-        /* Modal */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-        .modal-content {
-            background: white;
-            border-radius: 24px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 40px;
-            position: relative;
-            animation: modalFadeIn 0.3s ease;
-        }
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        .modal-close {
-            position: sticky;
-            top: 0;
-            float: right;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: #999;
-            cursor: pointer;
-            transition: 0.3s;
-            padding: 8px;
-            z-index: 1;
-        }
-        .modal-close:hover {
-            color: #333;
-            transform: rotate(90deg);
-        }
-        .modal-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            color: var(--petroleo);
-            margin-bottom: 8px;
-        }
-        .modal-title span {
-            color: var(--dourado);
-        }
-        .modal-subtitle {
-            color: #666;
-            margin-bottom: 24px;
-        }
-
-        /* Formulário */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .form-group {
-            margin-bottom: 16px;
-        }
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-        .form-group label .required {
-            color: #e74c3c;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--dourado);
-            box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.1);
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        /* Dia da semana */
-        .dia-semana-display {
-            text-align: center;
-            padding: 10px 16px;
-            margin-top: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--petroleo);
-            background: var(--bege);
-            border-radius: 12px;
-            border: 2px dashed var(--dourado);
-        }
-        .dia-semana-display i {
-            color: var(--dourado);
-            margin-right: 8px;
-        }
-        .dia-semana-display .dia-semana-nome {
-            color: var(--dourado);
-            text-transform: uppercase;
-        }
-
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .time-slot {
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        .time-slot:hover:not(.booked) {
-            border-color: var(--dourado);
-            background: #fcf8ee;
-        }
-        .time-slot.selected {
-            border-color: var(--dourado);
-            background: var(--dourado);
-            color: white;
-        }
-        .time-slot.booked {
-            border-color: #ff6b6b;
-            background: #fff5f5;
-            color: #ff6b6b;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-        .time-slot.booked::after {
-            content: ' ❌';
-        }
-        .time-slot.available::after {
-            content: ' ✓';
-            color: #51cf66;
-        }
-        .time-slot.available {
-            border-color: #ddd;
-        }
-
-        .loading-spinner {
-            display: none;
-            text-align: center;
-            padding: 20px;
-        }
-        .loading-spinner.active {
-            display: block;
-        }
-        .spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--dourado);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .notification-toast {
-            position: fixed;
-            top: 90px;
-            right: 20px;
-            padding: 16px 24px;
-            border-radius: 12px;
-            color: white;
-            font-weight: 600;
-            z-index: 3000;
-            animation: slideInRight 0.5s ease;
-            display: none;
-            max-width: 400px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .notification-toast.success {
-            background: #51cf66;
-        }
-        .notification-toast.error {
-            background: #ff6b6b;
-        }
-        .notification-toast.info {
-            background: var(--petroleo);
-        }
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .btn-submit {
-            background: var(--dourado);
-            color: white;
-            border: none;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-            margin-top: 10px;
-        }
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
-        }
-        .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 30px;
-            background: #f0faf0;
-            border-radius: 16px;
-            border: 2px solid #51cf66;
-        }
-        .success-message.active {
-            display: block;
-        }
-        .success-message i {
-            font-size: 4rem;
-            color: #51cf66;
-            margin-bottom: 16px;
-        }
-        .success-message h3 {
-            color: #2d4449;
-            margin-bottom: 8px;
-        }
-        .success-message p {
-            color: #666;
         }
 
         /* ============================================
@@ -1226,15 +951,6 @@
             }
             .section-title {
                 font-size: 2.2rem;
-            }
-            .time-slots {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .modal-content {
-                padding: 30px;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -1373,26 +1089,6 @@
             }
             .container {
                 padding: 0 16px;
-            }
-            .time-slots {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .modal-content {
-                padding: 24px 20px;
-            }
-            .modal-title {
-                font-size: 1.4rem;
-            }
-            .modal-close {
-                font-size: 1.4rem;
-            }
-            .notification-toast {
-                top: 80px;
-                right: 10px;
-                left: 10px;
-                max-width: none;
-                font-size: 0.9rem;
-                padding: 14px 18px;
             }
         }
 
@@ -1547,30 +1243,6 @@
             .faq-item.ativo .faq-resposta {
                 padding: 0 16px 14px 16px;
             }
-            .time-slots {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .modal-content {
-                padding: 16px 14px;
-                border-radius: 16px;
-            }
-            .modal-title {
-                font-size: 1.2rem;
-            }
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 10px 14px;
-                font-size: 0.9rem;
-            }
-            .time-slot {
-                padding: 8px;
-                font-size: 0.8rem;
-            }
-            .dia-semana-display {
-                font-size: 0.85rem;
-                padding: 6px 12px;
-            }
         }
 
         @media (max-width: 380px) {
@@ -1599,13 +1271,32 @@
             .caso-item {
                 aspect-ratio: 1/1;
             }
-            .time-slots {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .hide-mobile {
+                display: none !important;
             }
-            .time-slot {
-                font-size: 0.75rem;
-                padding: 6px;
+            .show-mobile {
+                display: block !important;
+            }
+            .text-center-mobile {
+                text-align: center !important;
+            }
+            .flex-column-mobile {
+                flex-direction: column !important;
+            }
+            .gap-mobile-16 {
+                gap: 16px !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hide-desktop {
+                display: none !important;
+            }
+            .show-desktop {
+                display: block !important;
             }
         }
     </style>
@@ -1629,7 +1320,6 @@
                     <li><a href="#depoimentos">Depoimentos</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li><a href="#" id="abrir-agendamento" style="color: var(--dourado); font-weight: 700;">Agendar</a></li>
                 </ul>
                 <div class="menu-mobile" id="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -1651,9 +1341,6 @@
                     <a href="#" class="btn btn-whatsapp" id="whatsapp-hero">
                         <i class="fab fa-whatsapp"></i> Agendar com Renata
                     </a>
-                    <a href="#" class="btn btn-agendamento" id="abrir-agendamento-hero">
-                        <i class="fas fa-calendar-check"></i> Agendamento Online
-                    </a>
                     <a href="#servicos" class="btn btn-secundario">Conheça os Tratamentos</a>
                 </div>
             </div>
@@ -1673,9 +1360,6 @@
             </p>
             <a href="#" class="btn btn-whatsapp" id="whatsapp-banner">
                 <i class="fab fa-whatsapp"></i> Agendar Visita Domiciliar
-            </a>
-            <a href="#" class="btn btn-agendamento" id="abrir-agendamento-banner">
-                <i class="fas fa-calendar-check"></i> Agendamento Online
             </a>
         </div>
     </section>
@@ -1809,12 +1493,13 @@
         </div>
     </section>
 
-    <!-- ===== GALERIA ===== -->
+    <!-- ===== GALERIA ANTES E DEPOIS ===== -->
     <section class="section" id="galeria" style="background: var(--cinza-claro);">
         <div class="container">
             <h2 class="section-title">Antes e <span>Depois</span></h2>
             <p class="section-subtitle">Resultados reais dos tratamentos realizados pela <strong>Dra. Renata Kemp</strong>.</p>
             
+            <!-- ===== CASO 1 - UNHA ENCRAVADA ===== -->
             <div class="caso-container">
                 <div class="caso-titulo">
                     <span class="badge-caso">CASO 1</span>
@@ -1848,6 +1533,7 @@
                 </div>
             </div>
 
+            <!-- ===== CASO 2 - CALOSIDADE ===== -->
             <div class="caso-container">
                 <div class="caso-titulo">
                     <span class="badge-caso">CASO 2</span>
@@ -1887,13 +1573,14 @@
         </div>
     </section>
 
-    <!-- ===== VÍDEOS ===== -->
+    <!-- ===== VÍDEOS - FORMATO CORRETO ===== -->
     <section class="section" id="videos" style="background: var(--cinza-claro);">
         <div class="container">
             <h2 class="section-title">Vídeos da <span>Dra. Renata Kemp</span></h2>
             <p class="section-subtitle">Conheça um pouco mais sobre o trabalho de Renata e veja depoimentos de quem já confiou em seu cuidado.</p>
             
             <div class="videos-grid">
+                <!-- Vídeo 1 - Relato de Experiência -->
                 <div class="video-card">
                     <div class="video-wrapper">
                         <video controls preload="metadata" playsinline>
@@ -1905,6 +1592,7 @@
                     <p>Depoimento emocionante de uma paciente sobre o atendimento da <strong>Dra. Renata Kemp</strong> e os resultados transformadores do tratamento.</p>
                 </div>
                 
+                <!-- Vídeo 2 - Trabalhando -->
                 <div class="video-card">
                     <div class="video-wrapper">
                         <video controls preload="metadata" playsinline>
@@ -2033,17 +1721,14 @@
                     <a href="#" class="btn btn-whatsapp" id="whatsapp-contato">
                         <i class="fab fa-whatsapp"></i> Agendar com Renata
                     </a>
-                    <a href="#" class="btn btn-agendamento" id="abrir-agendamento-contato">
-                        <i class="fas fa-calendar-check"></i> Agendamento Online
-                    </a>
                 </div>
                 <div class="contato-mapa">
                     <i class="fas fa-home"></i>
                     <h3>Atendimento Domiciliar</h3>
                     <p>A <strong>Dra. Renata Kemp</strong> leva todo o cuidado e estrutura até você em Guarulhos e região.</p>
                     <p style="margin-top: 12px; font-size: 0.9rem; color: var(--petroleo);">
-                        <i class="fas fa-calendar-check" style="color: var(--dourado);"></i>
-                        Agende online de forma rápida e prática!
+                        <i class="fas fa-whatsapp" style="color: #25D366;"></i>
+                        Agende pelo WhatsApp e receba a visita da Renata!
                     </p>
                 </div>
             </div>
@@ -2101,110 +1786,14 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- ===== NOTIFICATION TOAST ===== -->
-    <div class="notification-toast" id="notificationToast"></div>
-
-    <!-- ============================================
-    MODAL DE AGENDAMENTO
-    ============================================ -->
-    <div class="modal-overlay" id="modalAgendamento">
-        <div class="modal-content">
-            <button class="modal-close" id="fechar-modal">&times;</button>
-            
-            <h2 class="modal-title">📅 Agendamento <span>Online</span></h2>
-            <p class="modal-subtitle">Preencha os dados abaixo e agende sua consulta com a Dra. Renata Kemp.</p>
-
-            <!-- Formulário -->
-            <form id="appointmentForm">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Nome completo <span class="required">*</span></label>
-                        <input type="text" id="nome" required placeholder="Seu nome completo">
-                    </div>
-
-                    <div class="form-group">
-                        <label>WhatsApp <span class="required">*</span></label>
-                        <input type="tel" id="telefone" required placeholder="(11) 99999-9999">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Serviço <span class="required">*</span></label>
-                        <select id="servico" required>
-                            <option value="">Selecione...</option>
-                            <option value="Podologia Clínica">Podologia Clínica</option>
-                            <option value="Pé Diabético">Pé Diabético</option>
-                            <option value="Unha Encravada">Unha Encravada</option>
-                            <option value="Calos e Calosidades">Calos e Calosidades</option>
-                            <option value="Verrugas Plantares">Verrugas Plantares</option>
-                            <option value="Micose">Micose</option>
-                            <option value="Podogeriatria">Podogeriatria</option>
-                            <option value="Órteses">Órteses</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Data <span class="required">*</span></label>
-                        <input type="date" id="data" required>
-                        <!-- Dia da semana -->
-                        <div class="dia-semana-display" id="diaSemanaDisplay">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span class="dia-semana-nome" id="diaSemanaNome">Selecione uma data</span>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label>Horários Disponíveis <span class="required">*</span></label>
-                        <div class="time-slots" id="timeSlots">
-                            <p style="grid-column: 1/-1; text-align: center; color: #999; padding: 20px;">
-                                Selecione uma data para ver os horários disponíveis
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label>Observações</label>
-                        <textarea id="observacoes" rows="3" placeholder="Alguma informação adicional?"></textarea>
-                    </div>
-                </div>
-
-                <div class="loading-spinner" id="loadingSpinner">
-                    <div class="spinner"></div>
-                    <p style="margin-top: 12px; color: #666;">Processando agendamento...</p>
-                </div>
-
-                <div class="success-message" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>✅ Agendamento realizado!</h3>
-                    <p>Você receberá uma mensagem de confirmação em breve.<br>
-                    A <strong>Dra. Renata Kemp</strong> entrará em contato para confirmar os detalhes.</p>
-                    <button type="button" class="btn btn-primario" style="margin-top: 16px;" id="fechar-sucesso">
-                        <i class="fas fa-check"></i> Entendi
-                    </button>
-                </div>
-
-                <button type="submit" class="btn-submit" id="submitBtn">
-                    <i class="fas fa-calendar-check"></i> Confirmar Agendamento
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- ============================================
-    JAVASCRIPT
-    ============================================ -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         // ============================================
-        // CONFIGURAÇÃO
+        // WHATSAPP COM MENSAGEM PERSONALIZADA
         // ============================================
-        // Substitua pela URL do seu backend quando estiver no Render
-        // Exemplo: const API_URL = 'https://levita-api.onrender.com/api';
-        const API_URL = 'http://localhost:3000/api';
         const numeroWhatsApp = '5511978303833';
         const mensagemPersonalizada = 'Olá, vim pelo site e gostaria de agendar uma consulta com a Dra. Renata Kemp.';
 
-        // ============================================
-        // WHATSAPP
-        // ============================================
         function abrirWhatsApp() {
             const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemPersonalizada)}`;
             window.open(url, '_blank');
@@ -2348,285 +1937,6 @@
                     });
                 }, 200);
             }
-        });
-
-        // ============================================
-        // SISTEMA DE AGENDAMENTO
-        // ============================================
-        document.addEventListener('DOMContentLoaded', function() {
-            // Elementos
-            const modal = document.getElementById('modalAgendamento');
-            const form = document.getElementById('appointmentForm');
-            const dataInput = document.getElementById('data');
-            const diaSemanaNome = document.getElementById('diaSemanaNome');
-            const timeSlotsContainer = document.getElementById('timeSlots');
-            const loadingSpinner = document.getElementById('loadingSpinner');
-            const submitBtn = document.getElementById('submitBtn');
-            const successMessage = document.getElementById('successMessage');
-            const notification = document.getElementById('notificationToast');
-
-            // Estado
-            let selectedDate = null;
-            let selectedTime = null;
-            let bookedSlots = [];
-
-            // Dias da semana
-            const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-
-            function atualizarDiaSemana(date) {
-                if (!date) {
-                    diaSemanaNome.textContent = 'Selecione uma data';
-                    return;
-                }
-                const dataObj = new Date(date);
-                const dia = dataObj.getDay();
-                const dataFormatada = dataObj.toLocaleDateString('pt-BR');
-                diaSemanaNome.textContent = `${diasSemana[dia]}, ${dataFormatada}`;
-            }
-
-            // ============================================
-            // ABRIR/FECHAR MODAL
-            // ============================================
-            function abrirModal() {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                form.reset();
-                successMessage.classList.remove('active');
-                loadingSpinner.classList.remove('active');
-                submitBtn.style.display = 'block';
-                document.querySelectorAll('.time-slot.selected').forEach(el => el.classList.remove('selected'));
-                selectedTime = null;
-                
-                const hoje = new Date();
-                const amanha = new Date(hoje);
-                amanha.setDate(amanha.getDate() + 1);
-                dataInput.min = amanha.toISOString().split('T')[0];
-                const dataPadrao = amanha.toISOString().split('T')[0];
-                dataInput.value = dataPadrao;
-                selectedDate = dataPadrao;
-                atualizarDiaSemana(dataPadrao);
-                carregarHorarios(dataPadrao);
-            }
-
-            function fecharModal() {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            document.querySelectorAll('#abrir-agendamento, #abrir-agendamento-hero, #abrir-agendamento-banner, #abrir-agendamento-contato').forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    abrirModal();
-                });
-            });
-
-            document.getElementById('fechar-modal').addEventListener('click', fecharModal);
-            document.getElementById('fechar-sucesso').addEventListener('click', fecharModal);
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) fecharModal();
-            });
-
-            // ============================================
-            // CARREGAR HORÁRIOS
-            // ============================================
-            async function carregarHorarios(date) {
-                if (!date) return;
-
-                timeSlotsContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999; padding: 20px;">Carregando horários...</p>';
-
-                try {
-                    const response = await fetch(`${API_URL}/slots?date=${date}`);
-                    const data = await response.json();
-                    
-                    if (data.success) {
-                        bookedSlots = data.bookedSlots || [];
-                        renderizarHorarios(date);
-                    } else {
-                        timeSlotsContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #e74c3c; padding: 20px;">Erro ao carregar horários</p>';
-                    }
-                } catch (error) {
-                    console.error('Erro:', error);
-                    bookedSlots = ['08:00', '09:30', '14:00'];
-                    renderizarHorarios(date);
-                }
-            }
-
-            // ============================================
-            // RENDERIZAR HORÁRIOS
-            // ============================================
-            function renderizarHorarios(date) {
-                const slots = gerarHorarios(date);
-                timeSlotsContainer.innerHTML = '';
-
-                if (slots.length === 0) {
-                    timeSlotsContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #999; padding: 20px;">Nenhum horário disponível para esta data</p>';
-                    return;
-                }
-
-                slots.forEach(slot => {
-                    const div = document.createElement('div');
-                    div.className = 'time-slot';
-                    
-                    const isBooked = bookedSlots.includes(slot);
-                    const isPast = isHorarioPassado(date, slot);
-                    
-                    if (isBooked || isPast) {
-                        div.classList.add('booked');
-                        div.textContent = slot;
-                    } else {
-                        div.classList.add('available');
-                        div.textContent = slot;
-                        div.addEventListener('click', function() {
-                            document.querySelectorAll('.time-slot.selected').forEach(el => {
-                                el.classList.remove('selected');
-                            });
-                            this.classList.add('selected');
-                            selectedTime = slot;
-                        });
-                    }
-
-                    timeSlotsContainer.appendChild(div);
-                });
-            }
-
-            // ============================================
-            // GERAR HORÁRIOS
-            // ============================================
-            function gerarHorarios(date) {
-                const slots = [];
-                const dataObj = new Date(date);
-                const diaSemana = dataObj.getDay();
-                
-                if (diaSemana === 0) return slots;
-
-                if (diaSemana === 6) {
-                    for (let hour = 8; hour < 13; hour++) {
-                        slots.push(`${String(hour).padStart(2, '0')}:00`);
-                        if (hour < 12) slots.push(`${String(hour).padStart(2, '0')}:30`);
-                    }
-                    return slots;
-                }
-
-                for (let hour = 8; hour < 19; hour++) {
-                    if (hour >= 12 && hour < 13) continue;
-                    slots.push(`${String(hour).padStart(2, '0')}:00`);
-                    if (hour < 18) slots.push(`${String(hour).padStart(2, '0')}:30`);
-                }
-
-                return slots;
-            }
-
-            // ============================================
-            // VERIFICAR SE HORÁRIO JÁ PASSOU
-            // ============================================
-            function isHorarioPassado(date, time) {
-                const now = new Date();
-                const [hours, minutes] = time.split(':').map(Number);
-                const appointmentDate = new Date(date);
-                appointmentDate.setHours(hours, minutes, 0, 0);
-                return appointmentDate < now;
-            }
-
-            // ============================================
-            // MUDANÇA DE DATA
-            // ============================================
-            dataInput.addEventListener('change', function() {
-                selectedDate = this.value;
-                selectedTime = null;
-                document.querySelectorAll('.time-slot.selected').forEach(el => el.classList.remove('selected'));
-                atualizarDiaSemana(selectedDate);
-                carregarHorarios(selectedDate);
-            });
-
-            // ============================================
-            // SUBMISSÃO DO FORMULÁRIO
-            // ============================================
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-
-                const nome = document.getElementById('nome').value.trim();
-                const telefone = document.getElementById('telefone').value.trim();
-                const servico = document.getElementById('servico').value;
-                const data = document.getElementById('data').value;
-                const observacoes = document.getElementById('observacoes').value.trim();
-
-                if (!nome || !telefone || !servico || !data || !selectedTime) {
-                    showNotification('⚠️ Preencha todos os campos obrigatórios e selecione um horário', 'error');
-                    return;
-                }
-
-                const telefoneLimpo = telefone.replace(/\D/g, '');
-                if (telefoneLimpo.length < 10) {
-                    showNotification('⚠️ Digite um telefone válido com DDD', 'error');
-                    return;
-                }
-
-                const appointmentData = {
-                    nome,
-                    telefone: telefoneLimpo,
-                    servico,
-                    data,
-                    horario: selectedTime,
-                    observacoes: observacoes || undefined
-                };
-
-                loadingSpinner.classList.add('active');
-                submitBtn.disabled = true;
-
-                try {
-                    const response = await fetch(`${API_URL}/appointments`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(appointmentData)
-                    });
-
-                    const result = await response.json();
-
-                    if (result.success) {
-                        submitBtn.style.display = 'none';
-                        loadingSpinner.classList.remove('active');
-                        successMessage.classList.add('active');
-                        showNotification('✅ Agendamento realizado com sucesso!', 'success');
-                        carregarHorarios(data);
-                    } else {
-                        showNotification(`❌ Erro: ${result.message}`, 'error');
-                        loadingSpinner.classList.remove('active');
-                        submitBtn.disabled = false;
-                    }
-                } catch (error) {
-                    console.error('Erro:', error);
-                    showNotification('❌ Erro ao realizar agendamento. Tente novamente.', 'error');
-                    loadingSpinner.classList.remove('active');
-                    submitBtn.disabled = false;
-                }
-            });
-
-            // ============================================
-            // NOTIFICAÇÕES
-            // ============================================
-            function showNotification(message, type) {
-                notification.textContent = message;
-                notification.className = `notification-toast ${type}`;
-                notification.style.display = 'block';
-
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 5000);
-            }
-
-            // ============================================
-            // INICIALIZAR
-            // ============================================
-            const hoje = new Date();
-            const amanha = new Date(hoje);
-            amanha.setDate(amanha.getDate() + 1);
-            const dataDefault = amanha.toISOString().split('T')[0];
-            dataInput.value = dataDefault;
-            selectedDate = dataDefault;
-            atualizarDiaSemana(dataDefault);
-            carregarHorarios(dataDefault);
         });
 
         // ============================================
